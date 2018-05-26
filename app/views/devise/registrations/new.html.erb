@@ -1,0 +1,21 @@
+<div class="container">
+
+  <div class="row d-flex justify-content-center">
+    <div class="col-8">
+
+      <%if params[:plan] == '2' %>
+          <div class="p-4"><h2 class="text-center">Sign up Standard Plan</h2></div>
+
+        <%= render 'standard_form' %>
+      <%else %>
+
+      <div class="p-4"><h2 class="text-center">SignUp Free Plan</h2></div>
+          <%= render 'free_form' %>
+
+      <%end %>
+    </div>
+  </div>
+</div>
+
+
+  

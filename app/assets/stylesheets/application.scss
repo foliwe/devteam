@@ -1,5 +1,6 @@
 @import "bootstrap";
 @import "font-awesome";
+@import "stripe";
 
 body{
   font-family: 'Open Sans', sans-serif;
@@ -41,4 +42,15 @@ body{
 }
 .navbar-light .navbar-toggler {
     border: none;
+}
+.alert-notice, .alert-alert {
+  text-align: center;
+  background: rgba(255, 255, 255, 0.3);
+  border-color: rgba(255, 255, 255, 0.5);
+  margin-top: -14px;
+  color: #fff;
+}
+.flash{
+  position: absolute;
+  width: 100%;
 }

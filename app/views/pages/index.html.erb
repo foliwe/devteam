@@ -3,3 +3,32 @@
 
     <p class="lead py-4">A membership site where entrepreneurs meet developers</p>
 </div>
+
+<div class="container">
+  <div class="row my-5 py-5">
+    <div class="col-sm">
+      <div class="card" >
+       <div class="card-header text-center bg-info">
+        Free
+      </div>
+       <ul class="list-group list-group-flush">
+        <li class="list-group-item text-center">Free</li>
+        <li class="list-group-item text-center">Basic Limited Functionalites</li>
+        <li class="list-group-item text-center"> <%= link_to 'SignUp',new_user_registration_path(plan: @free_plan.id),class:"btn btn-info" %> </li>
+      </ul>
+      </div>
+    </div>
+    <div class="col-sm">
+      <div class="card" >
+       <div class="card-header text-center bg-warning">
+        Basic
+       </div>
+        <ul class="list-group list-group-flush">
+        <li class="list-group-item text-center">$10/months</li>
+        <li class="list-group-item text-center">All Features Included</li>
+        <li class="list-group-item text-center"> <%= link_to 'SignUp',new_user_registration_path(plan: @basic_plan.id),class:"btn btn-warning" %> </li>
+      </ul>
+      </div>
+    </div>
+  </div>
+</div>
