@@ -5,4 +5,9 @@ Rails.application.routes.draw do
   devise_for :users,controllers:{registrations: 'users/registrations'}
   get 'about', to: 'pages#about'
   get 'contact_us', to: 'contacts#new', as: 'contact_us'
+
+
+  resources :users do
+    resource :profile
+  end
 end
