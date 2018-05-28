@@ -1,0 +1,21 @@
+<div class="container">
+
+
+  <div class=" row d-flex  justify-content-around p-4">
+
+      <div class="col-sm p-4">  <%= image_tag('profile.png',size: '100') %></div>
+        <div class=" col-sm">
+            <h4><%= @user.profile.first_name %> <%= @user.profile.last_name %></h4>
+              <p class="lead"> <span class="badge badge-<%=icons_color%> pl-2"> <%=job_icon%></span><%= @user.profile.job_title %></p>
+
+              <%if current_user.plan_id == 2 %>
+              <p>
+              <%= @user.profile.phone_number %> </p>
+              <%else %>
+               <small>Contact display only for paid members</small>
+              <%end %>
+         </div>
+
+
+  </div>
+</div>

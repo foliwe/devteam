@@ -1,0 +1,5 @@
+<div class="container">
+  <%@user.each do |user| %>
+    <p><%=link_to user.profile.first_name user_profile_path(user_id: user.id)%></p>
+  <%end %>
+</div>
