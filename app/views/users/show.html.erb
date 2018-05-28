@@ -15,7 +15,9 @@
                <small>Contact display only for paid members</small>
               <%end %>
          </div>
+          <%if current_user.id == @user.profile.id %>
+          <%= link_to "Edit Profile",edit_user_profile_path( current_user.id),class:"btn btn-info"%>
 
-
+          <%end %>
   </div>
 </div>
