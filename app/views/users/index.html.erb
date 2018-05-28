@@ -1,7 +1,15 @@
 <div class="container">
-  <%@user.each do |user| %>
+  <div class=" row d-flex  justify-content-around p-4">
+        <%@user.each do |user| %>
+        <%if user.profile %>
+      <div class="col-sm p-4">  <%= image_tag('profile.png',size: '100') %></div>
+        <div class=" col-sm">
 
+              <h4><%= link_to user.profile.first_name,user_path(user) %> <%= user.profile.last_name %></h4>
+                <%= user.profile.phone_number %> </p>
 
-    <p><%=link_to user.profile.first_name , user_path(user) if user.profile%></p>
-  <%end %>
+          <%end %>
+           </div>
+            <%end %>
+  </div>
 </div>

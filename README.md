@@ -22,3 +22,9 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+
+# Totos
+* Add user edit page
+* update nav bar (add dropdown)
+* Overall styling
