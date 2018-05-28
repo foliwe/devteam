@@ -5,32 +5,64 @@
 </div>
 
 <div class="container">
+
   <div class="row my-5 py-5">
+  <% if user_signed_in?  %>
+  <div class="col-sm">
+    <div class="card p-3">
+
+        <p>
+
+          <%= link_to "Edit Profile",edit_user_profile_path( current_user.id),class:"btn btn-info" if current_user.profile%>
+        </p>
+
+            <p>
+            <%= link_to "View Profile",user_path(current_user.id),class:"btn btn-info"  if current_user.profile%>
+          </p>
+
+
+            <p>
+
+          <%= link_to "create Profile",new_user_profile_path( current_user.id),class:"btn btn-info" if !current_user.profile%>
+        </p>
+
+    </div>
+  </div>
+  <div class="col-sm ">
+      <div class="card p-3">
+        <%= link_to 'View Community','',class:"btn btn-info" %>
+      </div>
+  </div>
+
+
+
+  <%else%>
     <div class="col-sm">
       <div class="card" >
-       <div class="card-header text-center bg-info">
-        Free
-      </div>
-       <ul class="list-group list-group-flush">
-        <li class="list-group-item text-center">Free</li>
-        <li class="list-group-item text-center">Basic Limited Functionalites</li>
-        <li class="list-group-item text-center"> <%= link_to 'SignUp',new_user_registration_path(plan: @free_plan.id),class:"btn btn-info" %> </li>
-      </ul>
+        <div class="card-header text-center bg-info">
+          Free
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item text-center">Free</li>
+          <li class="list-group-item text-center">Basic Limited Functionalites</li>
+          <li class="list-group-item text-center"> <%= link_to 'SignUp',new_user_registration_path(plan: @free_plan.id),class:"btn btn-info" %> </li>
+        </ul>
       </div>
     </div>
     <div class="col-sm">
       <div class="card" >
-       <div class="card-header text-center bg-warning">
-        Basic
-       </div>
+        <div class="card-header text-center bg-warning">
+          Basic
+        </div>
         <ul class="list-group list-group-flush">
-        <li class="list-group-item text-center">$10/months</li>
-        <li class="list-group-item text-center">All Features Included</li>
-        <li class="list-group-item text-center"> <%= link_to 'SignUp',new_user_registration_path(plan: @basic_plan.id),class:"btn btn-warning" %> </li>
-      </ul>
+          <li class="list-group-item text-center">$10/months</li>
+          <li class="list-group-item text-center">All Features Included</li>
+          <li class="list-group-item text-center"> <%= link_to 'SignUp',new_user_registration_path(plan: @basic_plan.id),class:"btn btn-warning" %> </li>
+        </ul>
       </div>
     </div>
 
   </div>
-  <%= link_to "Create profile",new_user_profile_path(user_id: current_user.id) if user_signed_in?%>
+  <%end %>
+
 </div>

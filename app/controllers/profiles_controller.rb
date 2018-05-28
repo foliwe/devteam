@@ -1,6 +1,7 @@
 class ProfilesController < ApplicationController
 before_action :authenticate_user!
   def new
+    
     @profile = Profile.new
   end
 
@@ -16,6 +17,10 @@ before_action :authenticate_user!
     end
   end
 
+    def edit
+        @user = User.find(params[:user_id])
+        @profile = @user.profile
+    end
   private
 
   def profile_params

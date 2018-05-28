@@ -8,3 +8,4 @@
 Plan.destroy_all
 Plan.create!(name:"free",price:0)
 Plan.create!(name:"standard",price:10)
+ puts " 2 plans Created"
